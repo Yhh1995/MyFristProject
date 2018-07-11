@@ -9,5 +9,8 @@ urlpatterns = [
     url(r'^user2$', views.user2, name='user2'),
     url(r'htmlTest$', views.htmlTest, name='htmlTest'),
     url(r'csrf1$', views.csfr1, name='csrf1'),
-    url(r'csrf2$', views.csfr2, name='csrf2')
+    url(r'csrf2$', views.csfr2, name='csrf2'),
+    url(r'verifyCode$', views.verifyCode),
+    url(r'verifyTest$', views.verifyTest),
+    url(r'verifyTest2$', views.verifyTest2)
 ]

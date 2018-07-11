@@ -5,11 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<form action="csrf2" method="post">
-    <input type="text" name="uname">
-    <input type="submit" value="提交">
+<form action="verifyTest2" method="post">
     {% csrf_token %}
+    <input type="text" name="code1">
+    <img src="verifyCode">
+    <input type="submit" value="提交">
 </form>
-
 </body>
 </html>

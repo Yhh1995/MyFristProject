@@ -1,5 +1,6 @@
-# -*- coding:utf-8 -*-
+# coding=utf-8
 from django.shortcuts import render
+from django.http import HttpResponse
 from models import *
 
 
@@ -34,3 +35,13 @@ def user2(request):
 def htmlTest(request):
     context = {'t1': '<h1>123</h1>'}
     return render(request, 'booktest/htmlTest.html', context)
+
+
+# csrf
+def csfr1(request):
+    return render(request, 'booktest/csrf1.html')
+
+
+def csfr2(request):
+    uname = request.POST['uname']
+    return HttpResponse(uname)

@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-{{ t1|safe }}
+{% autoescape off %}
+{{ t1 }}
+{% endautoescape %}
+<hr>
+字面值：<br>
+{{ t2|default:'<h1>jnjf</h1>' }}
 </body>
 </html>

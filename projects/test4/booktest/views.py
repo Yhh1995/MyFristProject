@@ -18,3 +18,11 @@ def show(request, id):
 
 def index2(request):
     return render(request, 'booktest/index2.html')
+
+
+def user1(request):
+    return render(request, 'booktest/user1.html')
+
+
+def user2(request):
+    return render(request, 'booktest/user2.html')

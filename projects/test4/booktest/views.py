@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from django.shortcuts import render
 from models import *
 
@@ -21,8 +22,15 @@ def index2(request):
 
 
 def user1(request):
-    return render(request, 'booktest/user1.html')
+    context = {'uname': 'mypage'}
+    return render(request, 'booktest/user1.html', context)
 
 
 def user2(request):
     return render(request, 'booktest/user2.html')
+
+
+# html转义
+def htmlTest(request):
+    context = {'t1': '<h1>123</h1>'}
+    return render(request, 'booktest/htmlTest.html', context)

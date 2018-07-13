@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.shortcuts import render
 from django.http import JsonResponse
 from models import *
@@ -22,3 +23,7 @@ def city(request, id):
         list.append({'id': item.id, 'title': item.title})
     return JsonResponse({'data': list})
 
+
+# 自定义编辑器
+def htmlEditor(request):
+    return render(request,'booktest/htmlEditer.html')

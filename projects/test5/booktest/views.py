@@ -1,9 +1,10 @@
 # coding=utf-8
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from django.conf import settings
 from django.core.paginator import *
 from models import *
+import json
 import os
 
 
@@ -44,3 +45,17 @@ def herolist(request, pindex):
 # 省市区
 def area(request):
     return render(request, 'booktest/area.html')
+
+
+def area2(request, id):
+    id1 = int(id)
+    if id1 == 0:
+        data = AreaInfo.objects.filter(parea__isnull=True)
+    else:
+        data = [{}]
+    list = []
+    for area in data:
+        list.append([area.id, area.title])
+
+    # data1 = {'data': data}
+    return JsonResponse({'data': list})

@@ -27,3 +27,13 @@ def city(request, id):
 # 自定义编辑器
 def htmlEditor(request):
     return render(request,'booktest/htmlEditer.html')
+
+
+def htmlEditorHandel(request):
+    html = request.POST['hcontent']
+    test1 = Test1.objects.get(pk=1)
+    test1.content = html
+    test1.save()
+    context = {'content': html}
+    return render(request, 'booktest/htmlShow.html', context)
+

@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^htmlEditorHandle/', views.htmlEditorHandel),
     url(r'^cache1/$', views.cache1),
     url(r'^mysearch/$', views.mysearch),
+    url(r'^celeryTest/$', views.celeryTest),
 ]

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from task import *
 from models import *
 
 
@@ -57,3 +58,10 @@ def cache1(request):
 # 全文检索+中文分词
 def mysearch(request):
     return render(request,'booktest/mysearch.html')
+
+
+# celery 异步
+def celeryTest(request):
+    # show()
+    show.delay()
+    return HttpResponse('ok')
